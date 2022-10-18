@@ -84,7 +84,7 @@ if __name__ == "__main__":
     new_window.listen()
     new_window.onkeypress(paddle_1_up, "w")
     new_window.onkeypress(paddle_1_down, "s")
-    new_window.onkeypress(paddle_2_up, "UP")
-    new_window.onkeypress(paddle_2_down, "DOWN")
+    new_window.onkeypress(paddle_2_up, "Up")
+    new_window.onkeypress(paddle_2_down, "Down")
     while True:
         new_window.update()
