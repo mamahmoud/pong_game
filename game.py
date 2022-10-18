@@ -54,10 +54,8 @@ if __name__ == "__main__":
     new_window.bgcolor("orange")
     new_window.title("Mohamed Pong Game")
     new_window.tracer(0)
-
     # paddle 1
     paddle_1 = turtle.Turtle()
-
     paddle_1.color("white")
     paddle_1.shape("square")
     paddle_1.speed(0)
