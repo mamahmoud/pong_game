@@ -72,15 +72,14 @@ if __name__ == "__main__":
     paddle_2.shapesize(5, 1)
     paddle_2.penup()
     paddle_2.goto(380, 0)
-
     # ball
     ball = turtle.Turtle()
     ball.color("green")
     ball.shape("circle")
     ball.speed(0)
     ball.penup()
-    ball.dx = 0.25
-    ball.dy = 0.25
+    ball.dx = 0.1
+    ball.dy = 0.1
     # keys
     new_window.listen()
     new_window.onkeypress(paddle_1_up, "w")
@@ -98,13 +97,13 @@ if __name__ == "__main__":
         if ball.xcor() > 390 or ball.xcor() < -390:
             ball.dx *= -1
         # detect paddle2
-        if (abs(ball.ycor() - paddle_2.ycor()) < 20) and (
+        if (abs(ball.ycor() - paddle_2.ycor()) < 50) and (
             abs(ball.xcor() - paddle_2.xcor()) < 20
         ):
             ball.dy *= -1
             ball.dx *= -1
         # detect paddle2
-        if (abs(ball.ycor() - paddle_1.ycor()) < 20) and (
+        if (abs(ball.ycor() - paddle_1.ycor()) < 50) and (
             abs(ball.xcor() - paddle_1.xcor()) < 20
         ):
             ball.dy *= -1
