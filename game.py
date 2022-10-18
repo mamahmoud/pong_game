@@ -89,9 +89,23 @@ if __name__ == "__main__":
     new_window.onkeypress(paddle_2_down, "Down")
     while True:
         new_window.update()
+        # move ball
         ball.setx(ball.xcor() + ball.dx)
         ball.sety(ball.ycor() + ball.dy)
+        # detect edge
         if ball.ycor() > 290 or ball.ycor() < -290:
             ball.dy *= -1
         if ball.xcor() > 390 or ball.xcor() < -390:
+            ball.dx *= -1
+        # detect paddle2
+        if (abs(ball.ycor() - paddle_2.ycor()) < 20) and (
+            abs(ball.xcor() - paddle_2.xcor()) < 20
+        ):
+            ball.dy *= -1
+            ball.dx *= -1
+        # detect paddle2
+        if (abs(ball.ycor() - paddle_1.ycor()) < 20) and (
+            abs(ball.xcor() - paddle_1.xcor()) < 20
+        ):
+            ball.dy *= -1
             ball.dx *= -1
