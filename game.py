@@ -5,34 +5,46 @@ import turtle
 
 
 def paddle_1_up():
-    y = paddle_1.ycor()
-    y += 10
-    if y < 400:
-        paddle_1.sety(y)
+    """
+    This is a func to move pong up
+    """
+    y_axis = paddle_1.ycor()
+    y_axis += 10
+    if y_axis < 400:
+        paddle_1.sety(y_axis)
     return
 
 
 def paddle_1_down():
-    y = paddle_1.ycor()
-    y -= 10
-    if y > -400:
-        paddle_1.sety(y)
+    """
+    This is a func to move pong down
+    """
+    y_axis = paddle_1.ycor()
+    y_axis -= 10
+    if y_axis > -400:
+        paddle_1.sety(y_axis)
     return
 
 
 def paddle_2_up():
-    y = paddle_2.ycor()
-    y += 10
-    if y < 400:
-        paddle_2.sety(y)
+    """
+    This is a func to move pong up
+    """
+    y_axis = paddle_2.ycor()
+    y_axis += 10
+    if y_axis < 400:
+        paddle_2.sety(y_axis)
     return
 
 
 def paddle_2_down():
-    y = paddle_2.ycor()
-    y -= 10
-    if y > -400:
-        paddle_2.sety(y)
+    """
+    This is a func to move pong down
+    """
+    y_axis = paddle_2.ycor()
+    y_axis -= 10
+    if y_axis > -400:
+        paddle_2.sety(y_axis)
     return
 
 
