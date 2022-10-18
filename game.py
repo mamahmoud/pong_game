@@ -9,8 +9,8 @@ def paddle_1_up():
     This is a func to move pong up
     """
     y_axis = paddle_1.ycor()
-    y_axis += 15
-    if y_axis < 265:
+    y_axis += 25
+    if y_axis < 275:
         paddle_1.sety(y_axis)
     return
 
@@ -20,8 +20,8 @@ def paddle_1_down():
     This is a func to move pong down
     """
     y_axis = paddle_1.ycor()
-    y_axis -= 15
-    if y_axis > -265:
+    y_axis -= 25
+    if y_axis > -275:
         paddle_1.sety(y_axis)
     return
 
@@ -31,8 +31,8 @@ def paddle_2_up():
     This is a func to move pong up
     """
     y_axis = paddle_2.ycor()
-    y_axis += 15
-    if y_axis < 265:
+    y_axis += 25
+    if y_axis < 275:
         paddle_2.sety(y_axis)
     return
 
@@ -42,8 +42,8 @@ def paddle_2_down():
     This is a func to move pong down
     """
     y_axis = paddle_2.ycor()
-    y_axis -= 15
-    if y_axis > -265:
+    y_axis -= 25
+    if y_axis > -275:
         paddle_2.sety(y_axis)
     return
 
