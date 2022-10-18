@@ -79,7 +79,8 @@ if __name__ == "__main__":
     ball.shape("circle")
     ball.speed(0)
     ball.penup()
-
+    ball.dx = 0.25
+    ball.dy = 0.25
     # keys
     new_window.listen()
     new_window.onkeypress(paddle_1_up, "w")
@@ -88,3 +89,9 @@ if __name__ == "__main__":
     new_window.onkeypress(paddle_2_down, "Down")
     while True:
         new_window.update()
+        ball.setx(ball.xcor() + ball.dx)
+        ball.sety(ball.ycor() + ball.dy)
+        if ball.ycor() > 290 or ball.ycor() < -290:
+            ball.dy *= -1
+        if ball.xcor() > 390 or ball.xcor() < -390:
+            ball.dx *= -1
