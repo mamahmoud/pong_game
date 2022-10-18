@@ -9,8 +9,8 @@ def paddle_1_up():
     This is a func to move pong up
     """
     y_axis = paddle_1.ycor()
-    y_axis += 10
-    if y_axis < 400:
+    y_axis += 15
+    if y_axis < 265:
         paddle_1.sety(y_axis)
     return
 
@@ -20,8 +20,8 @@ def paddle_1_down():
     This is a func to move pong down
     """
     y_axis = paddle_1.ycor()
-    y_axis -= 10
-    if y_axis > -400:
+    y_axis -= 15
+    if y_axis > -265:
         paddle_1.sety(y_axis)
     return
 
@@ -31,8 +31,8 @@ def paddle_2_up():
     This is a func to move pong up
     """
     y_axis = paddle_2.ycor()
-    y_axis += 10
-    if y_axis < 400:
+    y_axis += 15
+    if y_axis < 265:
         paddle_2.sety(y_axis)
     return
 
@@ -42,15 +42,15 @@ def paddle_2_down():
     This is a func to move pong down
     """
     y_axis = paddle_2.ycor()
-    y_axis -= 10
-    if y_axis > -400:
+    y_axis -= 15
+    if y_axis > -265:
         paddle_2.sety(y_axis)
     return
 
 
 if __name__ == "__main__":
     new_window = turtle.Screen()
-    new_window.screensize(800, 600)
+    new_window.setup(width=800, height=600)
     new_window.bgcolor("orange")
     new_window.title("Mohamed Pong Game")
     new_window.tracer(0)
@@ -63,7 +63,7 @@ if __name__ == "__main__":
     paddle_1.speed(0)
     paddle_1.shapesize(5, 1)
     paddle_1.penup()
-    paddle_1.goto(-400, 0)
+    paddle_1.goto(-380, 0)
     # paddle 1
     paddle_2 = turtle.Turtle()
     paddle_2.color("white")
@@ -71,7 +71,7 @@ if __name__ == "__main__":
     paddle_2.speed(0)
     paddle_2.shapesize(5, 1)
     paddle_2.penup()
-    paddle_2.goto(400, 0)
+    paddle_2.goto(380, 0)
 
     # ball
     ball = turtle.Turtle()
