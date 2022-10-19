@@ -4,6 +4,11 @@ This is a python pong game using turtle
 import turtle
 import winsound
 
+WIDTH = 800
+HEIGHT = 600
+TURTLE_WIDTH = 20
+TURTLE_HEIGHT = 20
+
 
 def paddle_1_up():
     """
@@ -51,7 +56,7 @@ def paddle_2_down():
 
 if __name__ == "__main__":
     new_window = turtle.Screen()
-    new_window.setup(width=800, height=600)
+    new_window.setup(width=WIDTH, height=HEIGHT)
     new_window.bgcolor("orange")
     new_window.title("Mohamed Pong Game")
     new_window.tracer(0)
@@ -60,17 +65,17 @@ if __name__ == "__main__":
     paddle_1.color("white")
     paddle_1.shape("square")
     paddle_1.speed(0)
-    paddle_1.shapesize(5, 1)
+    paddle_1.shapesize(HEIGHT / (6 * TURTLE_HEIGHT), 1)
     paddle_1.penup()
-    paddle_1.goto(-380, 0)
+    paddle_1.goto(TURTLE_WIDTH - WIDTH / 2, 0)
     # paddle 1
     paddle_2 = turtle.Turtle()
     paddle_2.color("white")
     paddle_2.shape("square")
     paddle_2.speed(0)
-    paddle_2.shapesize(5, 1)
+    paddle_2.shapesize(HEIGHT / (6 * TURTLE_HEIGHT), 1)
     paddle_2.penup()
-    paddle_2.goto(380, 0)
+    paddle_2.goto(WIDTH / 2 - TURTLE_WIDTH, 0)
     # ball
     ball = turtle.Turtle()
     ball.color("green")
@@ -89,7 +94,7 @@ if __name__ == "__main__":
     score_turtle = turtle.Turtle()
     score_turtle.penup()
     score_turtle.color("green")
-    score_turtle.goto(0, 260)
+    score_turtle.goto(0, (HEIGHT / 2) - 100)
     score_turtle.hideturtle()
     score_turtle.speed(0)
     score_1 = 0
@@ -107,14 +112,16 @@ if __name__ == "__main__":
         ball.setx(ball.xcor() + ball.dx)
         ball.sety(ball.ycor() + ball.dy)
         # detect edge
-        if ball.ycor() > 290 or ball.ycor() < -290:
+        y_edge = (HEIGHT - TURTLE_HEIGHT) / 2
+        X_edge = (WIDTH - TURTLE_WIDTH) / 2
+        if ball.ycor() > y_edge or ball.ycor() < -y_edge:
             ball.dy *= -1
             winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
-        if ball.xcor() > 390:
+        if ball.xcor() > X_edge:
             score_1 += 1
             ball.dx *= -1
             winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
-        if ball.xcor() < -390:
+        if ball.xcor() < -X_edge:
             score_2 += 1
             ball.dx *= -1
             winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
