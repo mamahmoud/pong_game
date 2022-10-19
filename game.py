@@ -76,23 +76,43 @@ if __name__ == "__main__":
     ball.shape("circle")
     ball.speed(0)
     ball.penup()
-    ball.dx = 0.1
-    ball.dy = 0.1
+    ball.dx = 0.2
+    ball.dy = 0.2
     # keys
     new_window.listen()
     new_window.onkeypress(paddle_1_up, "w")
     new_window.onkeypress(paddle_1_down, "s")
     new_window.onkeypress(paddle_2_up, "Up")
     new_window.onkeypress(paddle_2_down, "Down")
+    # score
+    score_turtle = turtle.Turtle()
+    score_turtle.penup()
+    score_turtle.color("green")
+    score_turtle.goto(0, 260)
+    score_turtle.hideturtle()
+    score_turtle.speed(0)
+    score_1 = 0
+    score_2 = 0
     while True:
         new_window.update()
+        # print score
+        score_turtle.clear()
+        score_turtle.write(
+            f"Player1 = {score_1}, Player2 = {score_2}",
+            align="center",
+            font=("Arial", 24, "normal"),
+        )
         # move ball
         ball.setx(ball.xcor() + ball.dx)
         ball.sety(ball.ycor() + ball.dy)
         # detect edge
         if ball.ycor() > 290 or ball.ycor() < -290:
             ball.dy *= -1
-        if ball.xcor() > 390 or ball.xcor() < -390:
+        if ball.xcor() > 390:
+            score_1 += 1
+            ball.dx *= -1
+        if ball.xcor() < -390:
+            score_2 += 1
             ball.dx *= -1
         # detect paddle2
         if (abs(ball.ycor() - paddle_2.ycor()) < 50) and (
