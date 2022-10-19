@@ -2,6 +2,7 @@
 This is a python pong game using turtle
 """
 import turtle
+import winsound
 
 
 def paddle_1_up():
@@ -108,21 +109,26 @@ if __name__ == "__main__":
         # detect edge
         if ball.ycor() > 290 or ball.ycor() < -290:
             ball.dy *= -1
+            winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
         if ball.xcor() > 390:
             score_1 += 1
             ball.dx *= -1
+            winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
         if ball.xcor() < -390:
             score_2 += 1
             ball.dx *= -1
+            winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
         # detect paddle2
         if (abs(ball.ycor() - paddle_2.ycor()) < 50) and (
             abs(ball.xcor() - paddle_2.xcor()) < 20
         ):
             ball.dy *= -1
             ball.dx *= -1
+            winsound.PlaySound("jump_c_02-102843.wav", winsound.SND_ASYNC)
         # detect paddle2
         if (abs(ball.ycor() - paddle_1.ycor()) < 50) and (
             abs(ball.xcor() - paddle_1.xcor()) < 20
         ):
             ball.dy *= -1
             ball.dx *= -1
+            winsound.PlaySound("jump_c_02-102843.wav", winsound.SND_ASYNC)
